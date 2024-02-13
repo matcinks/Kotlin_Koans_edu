@@ -1,6 +1,10 @@
 import java.util.HashMap
 
-/* TODO */
+fun <K, V> buildMutableMap(build: HashMap<K, V>.() -> Unit): Map<K, V>{
+    val hashMap = HashMap<K, V>()
+    hashMap.build()
+    return hashMap
+}
 
 fun usage(): Map<Int, String> {
     return buildMutableMap {
